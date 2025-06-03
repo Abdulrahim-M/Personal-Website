@@ -1,0 +1,338 @@
+/* Mobile menu styles */
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(26, 25, 25, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 60;
+    transition: transform 0.3s ease-out;
+    border-left: 1px solid var(--color-borders);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#mobile-menu.open {
+    transform: translateX(-140%);
+}
+
+#mobile-menu-content {
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#close-menu {
+    align-self: flex-end;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    background: rgba(66, 66, 66, 0.3);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+#close-menu:hover {
+    background: rgba(66, 66, 66, 0.5);
+    transform: rotate(90deg);
+}
+
+.mobile-nav-item {
+    padding: 1rem;
+    margin: 0.25rem 0;
+    border-radius: 0.5rem;
+    transition: all 0.1s ease;
+}
+
+.mobile-nav-item:hover {
+    background: var(--color-hover-accent);
+}
+
+.mobile-nav-item.current {
+    background: var(--color-hover-accent);
+    border-left: 3px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Overlay for mobile menu */
+#mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/**************** Custom styles for home page ****************/
+#home {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.greating {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+#typing-box {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    min-height: 2em;
+    margin-bottom: 2rem;
+    color: var(--color-secondary);
+}
+
+.about-section {
+    padding: 80px 0;
+    background: rgba(26, 25, 25, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.section-intro {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+blockquote {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--color-accent);
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+#CVButton {
+    background: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#CVButton:hover {
+    background: var(--color-accent);
+    color: var(--color-background);
+    box-shadow: 0 0 15px rgba(0, 255, 178, 0.3);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-card {
+    background: rgba(26, 25, 25, 0.7);
+    border: 1px solid var(--color-borders);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.skill-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: var(--color-borders);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.projects-section {
+    padding: 80px 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: rgba(26, 25, 25, 0.7);
+    border: 1px solid var(--color-borders);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    height: 200px;
+    background: var(--color-borders);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.project-description {
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+}
+
+.project-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.project-link svg {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover svg {
+    transform: translateX(5px);
+}
+
+.coming-soon {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    padding: 3rem 0;
+}
+
+.blog-section {
+    padding: 80px 0;
+    background: rgba(26, 25, 25, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    background: rgba(26, 25, 25, 0.7);
+    border: 1px solid var(--color-borders);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-date {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.blog-excerpt {
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+}
+
+/* Typing animation */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--color-accent);
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.cursor.typing {
+    animation: none;
+}
